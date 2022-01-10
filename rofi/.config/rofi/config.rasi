@@ -1,0 +1,5 @@
+configuration {
+	modi: "drun,run,combi";
+	combi-modi: "drun,run";
+}
+@theme "gpfuchter"

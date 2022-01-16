@@ -17,4 +17,4 @@ interval=300
 
 [datetime]
 label=
-interval=5
+interval=1

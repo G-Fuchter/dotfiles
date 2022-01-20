@@ -40,6 +40,15 @@
     background-color: @backgroundcoloralternate;
 }
 
+element-text {
+    background-color: inherit;
+    text-color:       inherit;
+}
+
+element-icon {
+    background-color: inherit;
+}
+
 #element {
     padding: 14;
     border: 0 0 1 0;

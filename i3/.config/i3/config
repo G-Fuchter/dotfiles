@@ -209,7 +209,7 @@ gaps outer 10
 gaps inner 10
 
 # Background Image
-exec_always --no-startup-id feh --bg-scale ~/Pictures/Wallpapers/mountain_2.jpg
+exec_always --no-startup-id feh --randomize --bg-scale ~/Pictures/Wallpapers/*
 
 # Client Colors
 client.focused #1565c0 #1565c0 #1564c0 #6d6d6d #424242

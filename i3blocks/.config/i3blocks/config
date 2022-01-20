@@ -1,6 +1,20 @@
 separator_block_width=15
 command=~/.scripts/i3blocks/${BLOCK_NAME}.sh
 
+[window_name]
+command=xprop -id $(xprop -root | awk '/_NET_ACTIVE_WINDOW\(WINDOW\)/{print $NF}') | awk '/_NET_WM_NAME/{$1=$2="";print}' | cut -d'"' -f2 
+interval=1
+
+[wifi]
+label=📶 
+#INTERFACE=wlan0
+interval=30
+
+[battery]
+interval=30
+LABEL=🔋
+#BAT_NUMBER=0
+
 [bandwidth]
 instance=enp34s0;in
 label=
@@ -12,9 +26,10 @@ label=
 interval=1
 
 [weather]
-instance=2514256
+label=lol:
+instance=3-306732_1_al
 interval=300
 
 [datetime]
-label=
+label=⏱️
 interval=1

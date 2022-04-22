@@ -193,7 +193,7 @@ bar {
 		separator #6d6d6d
 		focused_workspace #1564c0 #1564c0 #eceff4
 		inactive_workspace #424242 #424242 #eceff4
-	} 
+	}
 }
 
 # ===--- ADDED CONFIGURATIONS ---===
@@ -224,6 +224,12 @@ exec_always dunst
 #Flameshot
 exec flameshot
 bindsym Print exec flameshot gui
+
+#Power manager
+exec --no-startup-id xfce4-power-manager
+
+# Lock
+exec --no-startup-id xautolock -time 10 -locker blurlock
 
 #Origin
 for_window [instance="origin.exe"] floating enable

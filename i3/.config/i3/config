@@ -229,7 +229,6 @@ bindsym Print exec flameshot gui
 exec --no-startup-id xfce4-power-manager
 
 # Lock
-exec --no-startup-id xautolock -time 10 -locker blurlock
 
 #Origin
 for_window [instance="origin.exe"] floating enable

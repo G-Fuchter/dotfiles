@@ -1,0 +1,8 @@
+flameshot
+picom
+dunst
+feh
+rofi
+yazi
+kitty
+stow

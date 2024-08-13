@@ -1,0 +1,54 @@
+#!/bin/bash
+
+function main () {
+	screenOne="eDP-1"
+	screenTwo=
+	screenThree=
+	case $1 in
+		home )
+			screenTwo="DP-2"
+			screenThree="DP-2"
+			;;
+		office )
+			screenTwo="DP-3-8"
+			screenThree="DP-3-1"
+			;;
+		office-carlos )
+			screenTwo="DP-3-1"
+			screenThree="DP-3-3"
+			;;
+		office-sebastian )
+			screenTwo="HDMI-1"
+			screenThree="DP-3"
+			;;
+		* )
+			screenTwo="DP-3-8"
+			screenThree="DP-3-1"
+			;;
+		esac
+	movei3Workspaces $screenOne $screenTwo $screenThree
+
+}
+
+function movei3Workspaces () {
+screenOne="eDP-1"
+screenTwo="DP-3-8"
+screenThree="DP-3-1"
+for i in {1..10}
+do
+	screen=$1
+	case $i in
+
+		2 | 3 )
+			screen=$2
+			;;
+
+		4 | 5 | 6 | 7 | 8 | 9 | 10)
+			screen=$3
+			;;
+	esac
+	i3-msg "[workspace=\"$i\"]" move workspace to output $screen
+done
+}
+
+main $1

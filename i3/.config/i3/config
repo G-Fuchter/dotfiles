@@ -215,21 +215,24 @@ exec_always --no-startup-id feh --randomize --bg-scale ~/Pictures/Wallpapers/*
 client.focused #1565c0 #1565c0 #1564c0 #6d6d6d #424242
 client.focused_inactive #1b1b1b #1b1b1b #1b1b1b #1b1b1b #1b1b1b
 
-#Picom
+# Autostart Applications
+
+# Power-Manager
+exec --no-startup-id xfce4-power-manager
+
+# Picom
 exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
 
-#Dunst
+# Dunst
 exec_always dunst
 
-#Flameshot
+# Flameshot
 exec flameshot
 bindsym Print exec flameshot gui
 
 #Power manager
 exec --no-startup-id xfce4-power-manager
 
-# Lock
-
-#Origin
+# Origin
 for_window [instance="origin.exe"] floating enable
 for_window [instance="Origin"] floating enable

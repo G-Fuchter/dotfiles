@@ -31,7 +31,9 @@ colors() {
 	done
 }
 
-[ -r /usr/share/bash-completion/bash_completion ] && . /usr/share/bash-completion/bash_completion
+[[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
+    . /usr/share/bash-completion/bash_completion
+#[ -r /usr/share/bash-completion/bash_completion ] && . /usr/share/bash-completion/bash_completion
 
 # Change the window title of X terminals
 case ${TERM} in
@@ -88,6 +90,8 @@ else
 	fi
 fi
 
+
+
 unset use_color safe_term match_lhs sh
 
 alias cp="cp -i"                          # confirm before overwriting something
@@ -138,8 +142,14 @@ ex ()
   fi
 }
 
-
 # nvm
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+source /usr/share/nvm/init-nvm.sh
+
+# Env
+export PATH=$PATH:/home/gpfuchter/.scripts
+
+#Aliases
+alias cardmarket-run8='~/Code/07-OldCM/cardmarket/.devcontainer/startPhp8Containers.sh'
+alias cardmarket-bash8='docker exec -ti cardmarket_devcontainer-php8-1 bash'
+alias vim=nvim
+alias task=go-task

@@ -1,0 +1,18 @@
+#!/bin/bash
+
+function movei3Workspaces () {
+for i in {1..10}
+do
+	screen="DP-3"
+	if [ $i -eq 1 ]; then
+		screen="eDP-1"
+	fi
+	i3-msg "[workspace=\"$i\"]" move workspace to output $screen
+done
+}
+
+xrandr --auto
+source ~/.screenlayout/office-dell.sh
+movei3Workspaces
+
+

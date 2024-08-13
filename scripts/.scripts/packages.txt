@@ -1,3 +1,4 @@
+nvim
 flameshot
 picom
 dunst
@@ -6,3 +7,4 @@ rofi
 yazi
 kitty
 stow
+luarocks

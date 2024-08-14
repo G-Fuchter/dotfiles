@@ -146,7 +146,8 @@ ex ()
 source /usr/share/nvm/init-nvm.sh
 
 # Env
-export PATH=$PATH:/home/gpfuchter/.scripts
+export PATH=$PATH:/home/gpfuchter/.scripts:$GOPATH/bin
+export EDITOR=nvim
 
 #Aliases
 alias cardmarket-run8='~/Code/07-OldCM/cardmarket/.devcontainer/startPhp8Containers.sh'

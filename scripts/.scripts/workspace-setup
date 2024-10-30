@@ -4,30 +4,45 @@ function main () {
 	screenOne="eDP-1"
 	screenTwo=
 	screenThree=
-	case $1 in
-		home )
-			screenTwo="DP-2"
-			screenThree="DP-2"
-			;;
-		office )
-			screenTwo="DP-3-8"
-			screenThree="DP-3-1"
-			;;
-		office-carlos )
-			screenTwo="DP-3-1"
-			screenThree="DP-3-3"
-			;;
-		office-sebastian )
-			screenTwo="HDMI-1"
-			screenThree="DP-3"
-			;;
-		* )
-			screenTwo="DP-3-8"
-			screenThree="DP-3-1"
-			;;
-		esac
-	movei3Workspaces $screenOne $screenTwo $screenThree
+  if [ "$1" = "ls" ]; then
+    listWorkspaces
+  else
+    case $1 in
+      home )
+        screenTwo="DP-2"
+        screenThree="DP-2"
+        ;;
+      office )
+        screenTwo="DP-3-8"
+        screenThree="DP-3-1"
+        ;;
+      office-carlos )
+        screenTwo="DP-3-1"
+        screenThree="DP-3-3"
+        ;;
+      office-sebastian )
+        screenTwo="HDMI-1"
+        screenThree="DP-3"
+        ;;
+      office-dimi )
+        screenTwo="DP-3"
+        screenThree="HDMI-1"
+        ;;
+      * )
+        screenTwo="DP-3-8"
+        screenThree="DP-3-1"
+        ;;
+      esac
+    movei3Workspaces $screenOne $screenTwo $screenThree
+  fi
+}
 
+function listWorkspaces () {
+    echo "home"
+    echo "office"
+    echo "office-carlos"
+    echo "office-sebastian"
+    echo "office-dimi"
 }
 
 function movei3Workspaces () {

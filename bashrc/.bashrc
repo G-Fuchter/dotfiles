@@ -153,7 +153,9 @@ export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
 
 ## Set GOPATH based on XDG_DATA_HOME
-export GOPATH="$XDG_DATA_HOME"/go
+export GOPATH="$XDG_DATA_HOME/go"
+export GOMODCACHE="$XDG_CACHE_HOME/go/mod"
+export GOAMD64="v2"
 
 export PATH=$PATH:/home/gpfuchter/.scripts:$GOPATH/bin
 export EDITOR=nvim
@@ -162,4 +164,3 @@ export EDITOR=nvim
 alias cardmarket-run8='~/Code/07-OldCM/cardmarket/.devcontainer/startPhp8Containers.sh'
 alias cardmarket-bash8='docker exec -ti cardmarket_devcontainer-php8-1 bash'
 alias vim=nvim
-alias task=go-task

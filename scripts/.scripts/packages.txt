@@ -8,3 +8,4 @@ yazi
 kitty
 stow
 luarocks
+redshift
